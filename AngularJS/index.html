@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>World Tour</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="Ejercicio curso AngularJS" />
+    <meta name="keywords" content="" />
+    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body ng-app="worldTourApp" ng-controller="WorldTourCtrl">
+    <header>
+        <h1>World Tour</h1>
+    </header>
+    <hr>
+    <section name="region_selector">
+        <div class="form-inline">
+            <label for="region_code">Choose a region</label>
+            <select class="form-control" ng-model="region_code" ng-change="loadCountries()">
+                <option value="europe">Europa</option>
+                <option value="americas">América</option>
+                <option value="asia">Asia</option>
+                <option value="africa">Africa</option>
+            </select>
+        </div>
+    </section>
+    <hr>
+    <section name="country_list" class="container">
+        <div class="row row-fluid">
+            <h2>Country list</h2>
+            <div class="col-md-6" name="search_by">
+                <label for="input-search">Look for?</label>
+                <input type="search" class="form-control" ng-model="input_search" placeholder="Search countries...">
+            </div>
+            <div class="col-md-6" name="order_by">
+                <label for="order_field">Order by</label>
+                <br>
+                <div class="btn-group" name="order_field">
+                    <button type="button" class="btn btn-success" ng-click="field='name'">Name</button>
+                    <button type="button" class="btn " ng-click="field='population'">Population</button>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="row row-fluid">
+            <div ng-repeat="country in country_list | filter:input_search | orderBy:field">
+                <div class="col-md-6">
+                    <div class="col-md-4">
+                        <img ng-src="http://www.geonames.org/flags/x/{{country.alpha2Code | lowercase}}.gif" class="img-responsive"></img>
+                    </div>
+                    <div class="col-md-8">
+                        <h4 name="name">{{country.name}}</h4>
+                        <p name="population">{{country.population | number:0}} inhabitants</p>
+                        <img src="http://openweathermap.org/img/w/{{country.weather.icon}}.png" /><span name="weather_description">{{country.weather.description}}</span> in {{country.capital}}
+                    </div>
+                    <br/>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular.min.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>

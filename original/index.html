@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>World Tour</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="Ejercicio curso AngularJS" />
+    <meta name="keywords" content="" />
+    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <h1>World Tour</h1>
+    </header>
+    <hr>
+    <section name="region_selector">
+        <div class="form-inline">
+            <label for="region_code">Choose a region</label>
+            <select class="form-control" name="region_code">
+                <option value="europe">Europa</option>
+                <option value="americas">América</option>
+                <option value="asia">Asia</option>
+                <option value="africa">Africa</option>
+            </select>
+        </div>
+    </section>
+    <hr>
+    <section name="country_list" class="container">
+        <div class="row row-fluid">
+            <h2>Country list</h2>
+            <div class="col-md-6" name="search_by">
+                <label for="input-search">Look for?</label>
+                <input type="search" class="form-control" name="input-search" placeholder="Search countries...">
+            </div>
+            <div class="col-md-6" name="order_by">
+                <label for="order_field">Order by</label>
+                <br>
+                <div class="btn-group" name="order_field">
+                    <button type="button" class="btn btn-success">Name</button>
+                    <button type="button" class="btn ">Population</button>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="row row-fluid">
+            <div class="col-md-6">
+                <div class="col-md-4">
+                    <img src="http://www.geonames.org/flags/x/es.gif" class="img-responsive"></img>
+                </div>
+                <div class="col-md-8">
+                    <h4 name="name">Spain</h4>
+                    <p name="population">42.125.369 habitantes</p>
+                    <img src="http://openweathermap.org/img/w/04d.png" /><span name="weather_description">overcast clouds</span> in Madrid
+                </div>
+                <p/>
+            </div>
+            <div class="col-md-6">
+                <div class="col-md-4">
+                    <img src="http://www.geonames.org/flags/x/fr.gif" class="img-responsive"></img>
+                </div>
+                <div class="col-md-8">
+                    <h4 name="name">France</h4>
+                    <p name="population">64.481.689 habitantes</p>
+                    <img src="http://openweathermap.org/img/w/01d.png" /><span name="weather_description">sun </span> in Paris
+                </div>
+            <p/>
+        </div>
+    <div class="col-md-6">
+                <div class="col-md-4">
+                    <img src="http://www.geonames.org/flags/x/pt.gif" class="img-responsive"></img>
+                </div>
+                <div class="col-md-8">
+                    <h4 name="name">Portugal</h4>
+                    <p name="population">12.368.824 habitantes</p>
+                    <img src="http://openweathermap.org/img/w/02d.png" /><span name="weather_description">rain</span> in Lisbon
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
